@@ -1,0 +1,10 @@
+/AddrSpace.class
+/ExceptionHandler.class
+/Syscall.class
+/UserThread.class
+/MemoryManager.class
+/Syscall$1.class
+/Syscall$1FunctionTask.class
+/SpaceIdManager.class
+/AddrSpace$ThreadCounter.class
+/ForkFunction.class

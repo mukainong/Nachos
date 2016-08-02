@@ -1,0 +1,49 @@
+CSE306 HW5
+Mukai Nong 108916315
+Zhi Cao 108816413
+12/03/2015
+
+/***************************************************************
+/*Brief summary our work on HW5: Virtual Memory./*
+/***************************************************************
+In HW5, we have to implement two system calls. The first system
+call is Mmap(char *name, int *sizep). The seconde system call is
+Munmap(void *addr).
+
+We did not create any new classes.
+
+We have modified several classes, including: 
+AddrSpace.java, Syscall.java, ExceptionHandler.java
+
+For the 1st task, we need to implement Mmap system call. This 
+system call will takes in a string as parameter, indicating file
+name. If such file is found in the disk, the address space of 
+calling process will extend for the size of the size of this 
+file. However, in the page tables, the page table entries of 
+newly added portion will be set initially as 'invalid'. Any 
+process trying to access this new region, will result in page
+fault. The entry point of our page faulty handler is in 
+ExceptionHandler.java.
+
+For the 2nd task, we need to implement Munmap system call. This
+system call takes the start virtual address of the region as 
+parameter. It frees all the physical page allocated of the newly
+allocated region. If the return value is 1 means the physical 
+pages are freed successfully. If the return value is 0 means the 
+physical pages fail to be freed.
+
+/**************************************************************************************
+/*How do we run the demo? (See README_HW5_Demo for complete demo printed in our laptop)
+/**************************************************************************************
+-f -cp test/cp3.txt cp3.txt -cp test/cp1.txt cp1.txt -cp test/Mmap test/Mmap -cp test/cp2.txt cp2.txt  -x test/Mmap
+
+We have created Mmap.c as our testing program. If you open this 
+c file, you will see we have incorporated Mmap and Munmap system
+calls. Be sure make Mmap.c to run executable.
+
+Also, we have three text file to test editing characters:
+cp1.txt, cp2.txt, cp3.txt
+
+Please refer to Mmap.c contents for reasons why demo is printed in such order. Also, 
+if you can open disk0, you can see relevant contents is in disk.
+

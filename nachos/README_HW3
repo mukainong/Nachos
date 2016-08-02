@@ -1,0 +1,217 @@
+CSE306 HW3
+Mukai Nong 108916315
+Zhi Cao 108816413
+11/03/2015
+
+/***************************************************************
+/*Brief summary our work on HW3: More Multiprogramming./*
+/***************************************************************
+In HW3, we have two major tasks. The first is to build a
+Round-Robin queue scheduling with 1000 clock ticks quantum and 
+a multilevel queue scheduling with starting quantum as 100 
+clock ticks. The second is to modify the console device driver, 
+by introducing a 10-character-size buffer and adding some
+functionalities like BACKSPACE, CTRL-U and CTRL-R.
+
+We have created our own new classes, including: LevelQueue.java, 
+SubNachosThread.java, MultilevelQueueOperator.java,
+SleepListManager.java.
+
+We have modified several classes, including: Syscall.java, 
+Scheduler.java, Syscall.java, ExceptionHandler.java.
+
+For the 1st task, the whole idea is to build a Round-Robin queue
+scheduling and a multileveQueue scheduling.Due to reason that our 
+design 'combine' both schedulers, actual
+usage on which queue depends on user decision. We start by 
+replacing the readyList with multilevel queue, which is defined
+in multilevelQueue.java class. In constructor of
+multilevelQueue.java, parameters (10, 100) means a 10-multilevel
+queue scheduler is to be set up with 100 clock ticks as starting
+quantum. On the other hand, parameters(1, 1000) means a Round-
+Robin queue scheduler is to be set up with 1000 clock ticks as
+quantum. If you want to choose which scheduler to use, by default 
+you run on multilevel scheduler; but if you type -rr in the run
+configuration, you are to on Round-Robin scheduler.
+
+Note that under multilevel queue scheduling, we use the formula:
+average = p*sample + (1-p)*average, to get the estimate which 
+indicate corresponding priority queue that we need to place in. 
+For example, we have priority queues with quantum 100, 200, 400, 
+800 and so on. A calculation 657.32 will result in this thread 
+being placed on queue with quantum 800.
+
+In addition to MultilevelQueue.java, we have also introduced 
+sleep system call, by modifying syscall.java and scheduler.java.
+In sleep() of syscall.java, we place the current thread in
+sleepListManager, defined in SleepListManager.java, and call P()
+on semaphore to block current thread. As a result, the count down
+has began on timer interrupt, and finally wakes up this slept
+thread, by calling V() on semaphore. Also please note that when 
+a thread wakes up, we use the previous estimate stored in this 
+thread to indicate the corresponding queue. Thus in this case 
+there is no calculation needed.
+
+For the 2nd task, the whole idea is to modify ConsoleDriver.java.
+Originally we have a working version of console driver, which
+only allow typing a character at a time, before blocking on this
+thread. Now we have improved this version, by introducing a buffer
+with 10-character-size. All the threads are allowed to providing
+characters to this buffer, while at the same time the characters
+in this buffer is being drained for actual console output. If the
+10-character-limit is reached, all threads will block until at 
+least one character has been drained for console output. When this
+moment takes place, one and more thread are being waken up to 
+continue provide characters to the buffer.
+
+Additionally we have added some functionalities to our console
+drive, such as line feed, back space, control+u, control+r. These
+functionalities can be verified when you start running the 
+program.
+
+
+/***************************************************************
+/*How to run executable 'schedule1' under Round-Robin?/* see README_HW3_Demo
+/***************************************************************
+-x test/schedule1 -ps -rr
+
+In schedule1, we have 3 threads running. Under Round-Robin, we 
+have only one queue, with 1000 quantum. Therefore, you can 
+observe that 3 thread is running 1000 clock ticks at a time,
+one after another.
+
+/***************************************************************
+/*How to run executable 'schedule1' under multilevel queue?/* see README_HW3_Demo
+/***************************************************************
+-x test/schedule1 -ps
+
+Under multilevel queue scheduling, threads have the ability to 
+"jump" to lower priority queue with longer quantum. You will 
+observe that 3 threads will start with top priority queue with
+quantum 100, and gradually jump to 200, 400, 800 and so on.
+
+/***************************************************************
+/*How to run executable 'sleep2' under Round-Robin?/* see README_HW3_Demo
+/***************************************************************
+-x test/sleep2 -ps -rr
+
+Note that executable sleep2 has only one thread, but it calls
+sleep system call, which makes it sleep for a while before waking
+up to continue running on Round-Robin queue.
+
+
+/***************************************************************
+/*How to run executable 'sleep2' under multilevel queue?/* see README_HW3_Demo
+/***************************************************************
+-x test/sleep2 -ps
+
+Similar to above, we will observe the thread will start jumping 
+from low quantum queue to high quantum after waking up.
+
+/***************************************************************
+/*How to run executable 'sleep' under Round-Robin?/* see README_HW3_Demo
+/***************************************************************
+-x test/sleep -ps -rr
+
+In executable sleep, we have 3 threads running, but 2 of them
+have to sleep initially for a while. After 2 children threads
+wake up, all 3 threads will resume rotating.
+
+/***************************************************************
+/*How to run executable 'sleep' under multilevel queue?/* see README_HW3_Demo
+/***************************************************************
+-x test/sleep -ps
+
+Under multilevel scheduling, at the beginning of program
+only the parent thread is running to lower priority queue.
+When children threads wake up, they will be made ready to run
+in highest priority queue. So CPU will begin to execute them
+until they reach same priority as parent thread, in this case
+all 3 threads will resume rotating each other.
+
+/*********************************************************
+/*How to run ConsoleTest.java?/*
+/*********************************************************
+-c
+
+Note that this is a java class provided by Professor.
+After launching, you can verity the functionality:
+
+1. echo: type something to see if they have shown
+
+2. line feed: press 'enter' button to see cursor on new line
+
+3. BKSPC: type something and press 'delete' button to erase
+
+4. CTRL-U: see if current line is erased
+
+5. CTRL-R: see if current line is erased and retyped 
+
+/*********************************************************
+/*How to run executable 'console1'?/*
+/*********************************************************
+-x test/console1
+
+Type something in the NACHOS console, either BKSPC to erase
+something or CTRL-U or CTRL-R, then press 'ENTER' button
+to print what is inside the buffer again. Note that this 
+executable can be run once. 
+
+/*********************************************************
+/*How to run executable join1 and timeshare1?/*
+/*********************************************************
+-x test/join1 -ps
+      OR
+-x test/timeshare1 -ps
+
+join1 is created by make file from join1.c
+timeshare1 is created by make file from timeshare1.c
+
+Please refer the README_HW2_DEMO for our output in our laptop.
+
+/****************************************************************************************************************
+/*Finally, how do we test the schedulers and COMPARE performance between Round-Robin and multilevel scheduling?/*
+/****************************************************************************************************************
+We want to show that threads with short CPU bursts receive 
+fairer treatment under multilevel feedback scheduling than 
+under round-robin scheduling.
+
+The scheduling would be fair if the ratio of the fraction 
+of CPU time actually received by a process to the fraction 
+of CPU time required by a process is independent of the 
+average length of a CPU burst length for that process.
+
+Therefore, we could calculate:
+the (fraction received)/(fraction required) ratio 
+for processes with various average CPU burst lengths 
+and see whether the ratios are roughly constant 
+independent of the CPU burst length or whether the 
+ratio is lower for processes with short CPU bursts than 
+it is for processes with higher CPU bursts.
+
+We know the definition of the fraction of CPU time 
+actually received by a process: ratio of the amount 
+of CPU time consumed by a process to the total
+(wall clock) time taken to run from beginning to end.
+
+We also know the definition of fraction of the CPU 
+required by a process: the ratio of the amount of CPU 
+time actually consumed by a process, to the total 
+(wall clock) time taken to run the process from 
+beginning to end. 
+
+Example: 
+
+run executable 'sleep2' both on Round-Robin and multilevel scheduling(outer loop: 5)
+
+Under Round-Robin, we have result: (1000+1000+1000+1000+1000+800)/5771 = 4800/5771
+Under multilevel , we have result: (100+100+200+400+800+1600+1400)/5773 = 4600/5773
+
+Therefore, we have observed that ratio on RR is slightly higher than multilevel.
+
+run executable 'sleep2' both on Round-Robin and multilevel scheduling(outer loop: 10)
+
+Under Round-Robin, we have result: (1000+1000+1000+1000+1000+1000+1000+1000+1000+400)/10917 = 9400/10917
+Under multilevel , we have result: (100+100+200+400+800+1600+3200+3200)/10915 = 9600/10915
+
+Therefore, we have observed that ratio on RR is slightly lower than multilevel.

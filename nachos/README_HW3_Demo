@@ -1,0 +1,1775 @@
+CSE306 HW2 DEMO
+Mukai Nong 108916315
+Zhi Cao 108816413
+10/20/2015
+
+/***************************************************************
+/*Demo: -x test/schedule1 -ps -rr
+/***************************************************************
+0				[+] Entering main
+0				[+] Queue: 0quantum: 1000
+1	CPU0	system	on	[+] Entering ThreadTest
+1	CPU0	system	on	[+] starting ProgTest: ProgTest0(test/schedule1)
+2	CPU0	system	off	[+] Current burst accumulated: 0 in status: 4 from thread: FirstThread
+18	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:564
+18	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+20	CPU0	system	on	[+] Start Fork
+28	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:416
+28	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+30	CPU0	system	on	[+] Start Fork
+101	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+202	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+202	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: ProgTest0(test/schedule1)
+202	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+303	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+404	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+404	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 564
+404	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+505	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+606	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+606	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 416
+606	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+707	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+808	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+909	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+1010	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+1111	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+1212	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+1313	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+1414	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+1515	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+1616	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+1717	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+1717	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/schedule1)
+1717	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+1818	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+1919	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+2020	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+2121	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+2222	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+2323	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+2424	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+2525	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+2626	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+2727	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+2828	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+2828	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+2828	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+2929	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+3030	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+3131	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+3232	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+3333	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+3434	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+3535	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+3636	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+3737	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+3838	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+3939	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+3939	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+3939	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+4040	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+4141	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+4242	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+4343	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+4444	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+4545	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+4646	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+4747	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+4848	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+4949	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+5050	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+5050	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/schedule1)
+5050	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+5151	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+5252	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+5353	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+5454	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+5555	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+5656	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+5757	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+5858	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+5959	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+6060	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+6161	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+6161	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+6161	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+6262	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+6363	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+6464	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+6565	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+6666	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+6767	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+6868	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+6969	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+7070	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+7171	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+7272	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+7272	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+7272	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+7373	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+7474	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+7575	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+7676	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+7777	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+7878	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+7979	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+8080	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+8181	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+8282	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+8383	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+8383	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/schedule1)
+8383	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+8484	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+8585	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+8686	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+8787	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+8888	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+8989	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+9090	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+9191	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+9292	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+9393	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+9494	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+9494	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+9494	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+9595	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+9696	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+9797	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+9898	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+9999	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+10100	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+10201	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+10302	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+10403	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+10504	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+10605	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+10605	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+10605	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+10706	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+10807	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+10908	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+11009	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+11110	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+11211	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+11312	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+11413	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+11514	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+11615	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+11716	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+11716	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/schedule1)
+11716	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+11817	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+11918	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+12019	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+12120	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+12221	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+12322	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+12423	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+12524	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+12625	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+12726	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+12827	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+12827	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+12827	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+12928	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+13029	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+13130	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+13231	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+13332	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+13346	CPU0	system	on	[+] User program exits with status=2: children thread forked at 416
+13350	CPU0	system	off	[+] Current burst accumulated: 500 in status: 4 from thread: children thread forked at 416
+13433	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+13534	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+13635	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+13736	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+13837	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+13938	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+14039	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+14140	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+14241	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+14342	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+14443	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+14443	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/schedule1)
+14443	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+14544	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+14645	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+14746	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+14847	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+14948	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+15049	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+15150	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+15251	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+15352	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+15453	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+15554	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+15554	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+15554	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+15655	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+15756	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+15857	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+15958	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+16059	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+16160	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+16261	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+16362	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+16463	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+16564	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+16665	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+16665	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/schedule1)
+16665	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+16766	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+16867	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+16968	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+17069	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+17170	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+17271	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+17372	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+17473	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+17574	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+17675	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+17776	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+17776	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+17776	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+17877	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+17978	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+18079	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+18180	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+18281	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+18382	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+18483	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+18584	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+18685	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+18786	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+18887	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+18887	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/schedule1)
+18887	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+18988	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+19089	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+19190	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+19291	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+19392	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+19493	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+19594	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+19695	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+19796	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+19897	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+19998	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+19998	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+19998	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+20099	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+20200	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+20301	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+20402	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+20503	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+20604	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+20705	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+20806	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+20907	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+21008	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+21109	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+21109	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/schedule1)
+21109	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1000
+21210	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+21311	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+21412	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+21513	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+21614	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+21715	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+21816	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+21917	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+22018	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+22119	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+22220	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+22220	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+22220	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+22321	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+22422	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+22523	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+22624	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+22725	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+22826	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+22927	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+22941	CPU0	system	on	[+] User program exits with status=1: ProgTest0(test/schedule1)
+22945	CPU0	system	off	[+] Current burst accumulated: 700 in status: 4 from thread: ProgTest0(test/schedule1)
+23028	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+23129	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+23230	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+23331	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+23432	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+23533	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+23634	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+23735	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+23836	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+23937	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+24038	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+24038	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+24038	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+24139	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+24240	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+24341	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+24442	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+24543	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+24644	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+24745	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+24846	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+24947	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+25048	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+25149	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+25149	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+25149	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+25250	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+25351	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+25452	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+25553	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+25654	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+25755	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+25856	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+25957	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+26058	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+26159	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+26260	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+26260	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+26260	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+26361	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+26462	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+26563	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+26664	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+26765	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+26866	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+26967	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+27068	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+27169	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+27270	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+27371	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+27371	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+27371	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+27472	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+27573	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+27674	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+27775	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+27876	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+27977	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+28078	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+28179	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+28280	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+28381	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+28482	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+28482	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+28482	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+28583	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+28684	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+28785	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+28886	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+28987	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+29088	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+29189	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+29290	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+29391	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+29492	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+29593	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+29593	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+29593	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+29694	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+29795	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+29896	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+29997	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+30098	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+30199	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+30300	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+30401	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+30502	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+30603	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+30704	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+30704	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 564
+30704	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1000
+30805	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+30906	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+31007	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+31108	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+31178	CPU0	system	on	[+] User program exits with status=3: children thread forked at 564
+31180	CPU0	system	on	[+] Last thread is here
+31183	CPU0	system	off	[+] Current burst accumulated: 400 in status: 4 from thread: children thread forked at 564
+
+
+/***************************************************************
+/*Demo: -x test/schedule1 -ps
+/***************************************************************   
+0				[+] Entering main
+0				[+] Queue: 0quantum: 100
+0				[+] Queue: 1quantum: 200
+0				[+] Queue: 2quantum: 400
+0				[+] Queue: 3quantum: 800
+0				[+] Queue: 4quantum: 1600
+0				[+] Queue: 5quantum: 3200
+0				[+] Queue: 6quantum: 6400
+0				[+] Queue: 7quantum: 12800
+0				[+] Queue: 8quantum: 25600
+0				[+] Queue: 9quantum: 51200
+1	CPU0	system	on	[+] Entering ThreadTest
+1	CPU0	system	on	[+] starting ProgTest: ProgTest0(test/schedule1)
+2	CPU0	system	off	[+] Current burst accumulated: 0 in status: 4 from thread: FirstThread
+18	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:564
+18	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+20	CPU0	system	on	[+] Start Fork
+28	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:416
+28	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+30	CPU0	system	on	[+] Start Fork
+101	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+202	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+202	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: ProgTest0(test/schedule1)
+202	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/schedule1) : 80.0
+202	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  100
+303	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+404	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+404	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 564
+404	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 564 : 80.0
+404	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  100
+505	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+606	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+606	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 416
+606	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 80.0
+606	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  100
+707	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+808	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+808	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: ProgTest0(test/schedule1)
+808	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/schedule1) : 128.0
+808	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  200
+909	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+1010	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+1010	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 564
+1010	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 564 : 128.0
+1010	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  200
+1111	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+1212	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+1212	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 416
+1212	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 128.0
+1212	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  200
+1313	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+1414	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+1515	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+1515	CPU0	system	off	[+] Current burst accumulated: 200 in status: 1 from thread: ProgTest0(test/schedule1)
+1515	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/schedule1) : 236.8
+1515	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  400
+1616	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+1717	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+1818	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+1818	CPU0	system	off	[+] Current burst accumulated: 200 in status: 1 from thread: children thread forked at 564
+1818	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 564 : 236.8
+1818	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  400
+1919	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+2020	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+2121	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+2121	CPU0	system	off	[+] Current burst accumulated: 200 in status: 1 from thread: children thread forked at 416
+2121	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 236.8
+2121	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  400
+2222	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+2323	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+2424	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+2525	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+2626	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+2626	CPU0	system	off	[+] Current burst accumulated: 400 in status: 1 from thread: ProgTest0(test/schedule1)
+2626	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/schedule1) : 462.08000000000004
+2626	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  800
+2727	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+2828	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+2929	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+3030	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+3131	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+3131	CPU0	system	off	[+] Current burst accumulated: 400 in status: 1 from thread: children thread forked at 564
+3131	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 564 : 462.08000000000004
+3131	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  800
+3232	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+3333	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+3434	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+3535	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+3636	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+3636	CPU0	system	off	[+] Current burst accumulated: 400 in status: 1 from thread: children thread forked at 416
+3636	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 462.08000000000004
+3636	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  800
+3737	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+3838	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+3939	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+4040	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+4141	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+4242	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+4343	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+4444	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+4545	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+4545	CPU0	system	off	[+] Current burst accumulated: 800 in status: 1 from thread: ProgTest0(test/schedule1)
+4545	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/schedule1) : 917.248
+4545	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  1600
+4646	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+4747	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+4848	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+4949	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+5050	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+5151	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+5252	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+5353	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+5454	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+5454	CPU0	system	off	[+] Current burst accumulated: 800 in status: 1 from thread: children thread forked at 564
+5454	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 564 : 917.248
+5454	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  1600
+5555	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+5656	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+5757	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+5858	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+5959	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+6060	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+6161	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+6262	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+6363	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+6363	CPU0	system	off	[+] Current burst accumulated: 800 in status: 1 from thread: children thread forked at 416
+6363	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 917.248
+6363	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1600
+6464	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1600
+6565	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1500
+6666	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1400
+6767	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1300
+6868	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1200
+6969	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1100
+7070	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 1000
+7171	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 900
+7272	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 800
+7373	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 700
+7474	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 600
+7575	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 500
+7676	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 400
+7777	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 300
+7878	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 200
+7979	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 100
+8080	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/schedule1)
+8080	CPU0	system	off	[+] Current burst accumulated: 1600 in status: 1 from thread: ProgTest0(test/schedule1)
+8080	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/schedule1) : 1830.3488
+8080	CPU0	system	off	[+] Now thread: ProgTest0(test/schedule1), has been placed in queue with quantum:  3200
+8181	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1600
+8282	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1500
+8383	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1400
+8484	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1300
+8585	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1200
+8686	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1100
+8787	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+8888	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+8989	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+9090	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+9191	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+9292	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+9393	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+9494	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+9595	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+9696	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+9797	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+9797	CPU0	system	off	[+] Current burst accumulated: 1600 in status: 1 from thread: children thread forked at 564
+9797	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 564 : 1830.3488
+9797	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  3200
+9898	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1600
+9999	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1500
+10100	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1400
+10201	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1300
+10302	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1200
+10403	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1100
+10504	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+10605	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+10706	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+10807	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+10908	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+11009	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+11110	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+11211	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+11312	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+11413	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+11514	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+11514	CPU0	system	off	[+] Current burst accumulated: 1600 in status: 1 from thread: children thread forked at 416
+11514	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 1830.3488
+11514	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  3200
+11615	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 3200
+11716	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 3100
+11817	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 3000
+11918	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2900
+12019	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2800
+12120	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2700
+12221	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2600
+12322	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2500
+12423	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2400
+12524	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2300
+12625	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2200
+12726	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2100
+12827	CPU0	system	on	[+] Thread ProgTest0(test/schedule1) has remaining clock ticks 2000
+12868	CPU0	system	on	[+] User program exits with status=1: ProgTest0(test/schedule1)
+12872	CPU0	system	off	[+] Current burst accumulated: 1300 in status: 4 from thread: ProgTest0(test/schedule1)
+12928	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 3200
+13029	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 3100
+13130	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 3000
+13231	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2900
+13332	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2800
+13433	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2700
+13534	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2600
+13635	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2500
+13736	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2400
+13837	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2300
+13938	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2200
+14039	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2100
+14140	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 2000
+14241	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1900
+14342	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1800
+14443	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1700
+14544	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1600
+14645	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1500
+14746	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1400
+14847	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1300
+14948	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1200
+15049	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1100
+15150	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 1000
+15251	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 900
+15352	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 800
+15453	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 700
+15554	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 600
+15655	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 500
+15756	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 400
+15857	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 300
+15958	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 200
+16059	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 100
+16160	CPU0	system	on	[+] Reset quantum on thread children thread forked at 564
+16160	CPU0	system	off	[+] Current burst accumulated: 3200 in status: 1 from thread: children thread forked at 564
+16160	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 564 : 3658.20928
+16160	CPU0	system	off	[+] Now thread: children thread forked at 564, has been placed in queue with quantum:  6400
+16261	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3200
+16362	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3100
+16463	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3000
+16564	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2900
+16665	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2800
+16766	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2700
+16867	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2600
+16968	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2500
+17069	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2400
+17170	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2300
+17271	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2200
+17372	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2100
+17473	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2000
+17574	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1900
+17675	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1800
+17776	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1700
+17877	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1600
+17978	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1500
+18079	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1400
+18180	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1300
+18281	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1200
+18382	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1100
+18483	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+18584	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+18685	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+18786	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+18887	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+18988	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+19089	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+19190	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+19291	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+19392	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+19493	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+19493	CPU0	system	off	[+] Current burst accumulated: 3200 in status: 1 from thread: children thread forked at 416
+19493	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 3658.20928
+19493	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  6400
+19594	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 6400
+19695	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 6300
+19796	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 6200
+19897	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 6100
+19998	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 6000
+20099	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 5900
+20200	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 5800
+20301	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 5700
+20402	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 5600
+20503	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 5500
+20604	CPU0	system	on	[+] Thread children thread forked at 564 has remaining clock ticks 5400
+20618	CPU0	system	on	[+] User program exits with status=3: children thread forked at 564
+20622	CPU0	system	off	[+] Current burst accumulated: 1100 in status: 4 from thread: children thread forked at 564
+20705	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6400
+20806	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6300
+20907	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6200
+21008	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6100
+21109	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6000
+21210	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5900
+21311	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5800
+21412	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5700
+21513	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5600
+21614	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5500
+21715	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5400
+21816	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5300
+21917	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5200
+22018	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5100
+22119	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5000
+22220	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4900
+22321	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4800
+22422	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4700
+22523	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4600
+22624	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4500
+22725	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4400
+22826	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4300
+22927	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4200
+23028	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4100
+23129	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 4000
+23230	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3900
+23331	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3800
+23432	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3700
+23533	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3600
+23634	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3500
+23735	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3400
+23836	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3300
+23937	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3200
+24038	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3100
+24139	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3000
+24240	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2900
+24341	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2800
+24442	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2700
+24543	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2600
+24644	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2500
+24745	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2400
+24846	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2300
+24947	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2200
+25048	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2100
+25149	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2000
+25250	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1900
+25351	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1800
+25452	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1700
+25553	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1600
+25654	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1500
+25755	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1400
+25856	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1300
+25957	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1200
+26058	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1100
+26159	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+26260	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+26361	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+26462	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+26563	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+26664	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+26765	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+26866	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+26967	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+27068	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+27169	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+27169	CPU0	system	off	[+] Current burst accumulated: 6400 in status: 1 from thread: children thread forked at 416
+27169	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 7314.925568000001
+27169	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  12800
+27270	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 12800
+27371	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 12700
+27472	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 12600
+27573	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 12500
+27674	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 12400
+27775	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 12300
+27825	CPU0	system	on	[+] User program exits with status=2: children thread forked at 416
+27827	CPU0	system	on	[+] Last thread is here
+27830	CPU0	system	off	[+] Current burst accumulated: 600 in status: 4 from thread: children thread forked at 416
+
+
+
+/***************************************************************
+/*Demo: -x test/sleep2 -ps -rr
+/***************************************************************
+0				[+] Entering main
+0				[+] Queue: 0quantum: 1000
+1	CPU0	system	on	[+] Entering ThreadTest
+1	CPU0	system	on	[+] starting ProgTest: ProgTest0(test/sleep2)
+2	CPU0	system	off	[+] Current burst accumulated: 0 in status: 4 from thread: FirstThread
+17	CPU0	system	on	[+] Printing ticks passed to sleep sys call: 500
+17	CPU0	system	off	[+] Current burst accumulated: 0 in status: 3 from thread: ProgTest0(test/sleep2)
+101	CPU0	system	off	[+]   Sleeping now, for another 500 ticks -- ProgTest0(test/sleep2)
+202	CPU0	system	off	[+]   Sleeping now, for another 400 ticks -- ProgTest0(test/sleep2)
+303	CPU0	system	off	[+]   Sleeping now, for another 300 ticks -- ProgTest0(test/sleep2)
+404	CPU0	system	off	[+]   Sleeping now, for another 200 ticks -- ProgTest0(test/sleep2)
+505	CPU0	system	off	[+]   Sleeping now, for another 100 ticks -- ProgTest0(test/sleep2)
+606	CPU0	system	off	[+]   Waking up! -- ProgTest0(test/sleep2)
+606	CPU0	system	off	[+] we have returned from yieldCPU
+607	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1000
+707	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 900
+808	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 800
+909	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 700
+1010	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 600
+1111	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 500
+1212	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 400
+1313	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 300
+1414	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 200
+1515	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+1616	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+1616	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/sleep2)
+1616	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  1000
+1717	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1000
+1818	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 900
+1919	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 800
+2020	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 700
+2121	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 600
+2222	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 500
+2323	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 400
+2424	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 300
+2525	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 200
+2626	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+2727	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+2727	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/sleep2)
+2727	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  1000
+2828	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1000
+2929	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 900
+3030	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 800
+3131	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 700
+3232	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 600
+3333	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 500
+3434	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 400
+3535	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 300
+3636	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 200
+3737	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+3838	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+3838	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/sleep2)
+3838	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  1000
+3939	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1000
+4040	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 900
+4141	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 800
+4242	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 700
+4343	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 600
+4444	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 500
+4545	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 400
+4646	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 300
+4747	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 200
+4848	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+4949	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+4949	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/sleep2)
+4949	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  1000
+5050	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1000
+5151	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 900
+5252	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 800
+5353	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 700
+5454	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 600
+5555	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 500
+5656	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 400
+5757	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 300
+5766	CPU0	system	on	[+] User program exits with status=1: ProgTest0(test/sleep2)
+5768	CPU0	system	on	[+] Last thread is here
+5771	CPU0	system	off	[+] Current burst accumulated: 800 in status: 4 from thread: ProgTest0(test/sleep2)
+
+
+/***************************************************************
+/*Demo: -x test/sleep2 -ps
+/***************************************************************
+0				[+] Entering main
+0				[+] Queue: 0quantum: 100
+0				[+] Queue: 1quantum: 200
+0				[+] Queue: 2quantum: 400
+0				[+] Queue: 3quantum: 800
+0				[+] Queue: 4quantum: 1600
+0				[+] Queue: 5quantum: 3200
+0				[+] Queue: 6quantum: 6400
+0				[+] Queue: 7quantum: 12800
+0				[+] Queue: 8quantum: 25600
+0				[+] Queue: 9quantum: 51200
+1	CPU0	system	on	[+] Entering ThreadTest
+1	CPU0	system	on	[+] starting ProgTest: ProgTest0(test/sleep2)
+2	CPU0	system	off	[+] Current burst accumulated: 0 in status: 4 from thread: FirstThread
+17	CPU0	system	on	[+] Printing ticks passed to sleep sys call: 500
+17	CPU0	system	off	[+] Current burst accumulated: 0 in status: 3 from thread: ProgTest0(test/sleep2)
+101	CPU0	system	off	[+]   Sleeping now, for another 500 ticks -- ProgTest0(test/sleep2)
+202	CPU0	system	off	[+]   Sleeping now, for another 400 ticks -- ProgTest0(test/sleep2)
+303	CPU0	system	off	[+]   Sleeping now, for another 300 ticks -- ProgTest0(test/sleep2)
+404	CPU0	system	off	[+]   Sleeping now, for another 200 ticks -- ProgTest0(test/sleep2)
+505	CPU0	system	off	[+]   Sleeping now, for another 100 ticks -- ProgTest0(test/sleep2)
+606	CPU0	system	off	[+]   Waking up! -- ProgTest0(test/sleep2)
+606	CPU0	system	off	[+] we have returned from yieldCPU
+607	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+707	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+707	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: ProgTest0(test/sleep2)
+707	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep2) : 80.0
+707	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  100
+808	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+909	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+909	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: ProgTest0(test/sleep2)
+909	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep2) : 128.0
+909	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  200
+1010	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 200
+1111	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+1212	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+1212	CPU0	system	off	[+] Current burst accumulated: 200 in status: 1 from thread: ProgTest0(test/sleep2)
+1212	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep2) : 236.8
+1212	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  400
+1313	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 400
+1414	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 300
+1515	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 200
+1616	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+1717	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+1717	CPU0	system	off	[+] Current burst accumulated: 400 in status: 1 from thread: ProgTest0(test/sleep2)
+1717	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep2) : 462.08000000000004
+1717	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  800
+1818	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 800
+1919	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 700
+2020	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 600
+2121	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 500
+2222	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 400
+2323	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 300
+2424	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 200
+2525	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+2626	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+2626	CPU0	system	off	[+] Current burst accumulated: 800 in status: 1 from thread: ProgTest0(test/sleep2)
+2626	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep2) : 917.248
+2626	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  1600
+2727	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1600
+2828	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1500
+2929	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1400
+3030	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1300
+3131	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1200
+3232	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1100
+3333	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1000
+3434	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 900
+3535	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 800
+3636	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 700
+3737	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 600
+3838	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 500
+3939	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 400
+4040	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 300
+4141	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 200
+4242	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 100
+4343	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep2)
+4343	CPU0	system	off	[+] Current burst accumulated: 1600 in status: 1 from thread: ProgTest0(test/sleep2)
+4343	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep2) : 1830.3488
+4343	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep2), has been placed in queue with quantum:  3200
+4444	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 3200
+4545	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 3100
+4646	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 3000
+4747	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2900
+4848	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2800
+4949	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2700
+5050	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2600
+5151	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2500
+5252	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2400
+5353	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2300
+5454	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2200
+5555	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2100
+5656	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 2000
+5757	CPU0	system	on	[+] Thread ProgTest0(test/sleep2) has remaining clock ticks 1900
+5768	CPU0	system	on	[+] User program exits with status=1: ProgTest0(test/sleep2)
+5770	CPU0	system	on	[+] Last thread is here
+5773	CPU0	system	off	[+] Current burst accumulated: 1400 in status: 4 from thread: ProgTest0(test/sleep2)
+
+
+/***************************************************************
+/*Demo: -x test/sleep -ps -rr
+/***************************************************************
+0				[+] Entering main
+0				[+] Queue: 0quantum: 1000
+1	CPU0	system	on	[+] Entering ThreadTest
+1	CPU0	system	on	[+] starting ProgTest: ProgTest0(test/sleep)
+2	CPU0	system	off	[+] Current burst accumulated: 0 in status: 4 from thread: FirstThread
+18	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:572
+18	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+20	CPU0	system	on	[+] Start Fork
+28	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:416
+28	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+30	CPU0	system	on	[+] Start Fork
+101	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+202	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+202	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: ProgTest0(test/sleep)
+202	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  1000
+212	CPU0	system	on	[+] Printing ticks passed to sleep sys call: 3000
+212	CPU0	system	off	[+] Current burst accumulated: 0 in status: 3 from thread: children thread forked at 572
+222	CPU0	system	on	[+] Printing ticks passed to sleep sys call: 2000
+222	CPU0	system	off	[+] Current burst accumulated: 0 in status: 3 from thread: children thread forked at 416
+303	CPU0	system	off	[+]   Sleeping now, for another 3000 ticks -- children thread forked at 572
+303	CPU0	system	off	[+]   Sleeping now, for another 2000 ticks -- children thread forked at 416
+303	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1000
+404	CPU0	system	off	[+]   Sleeping now, for another 2900 ticks -- children thread forked at 572
+404	CPU0	system	off	[+]   Sleeping now, for another 1900 ticks -- children thread forked at 416
+404	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 900
+505	CPU0	system	off	[+]   Sleeping now, for another 2800 ticks -- children thread forked at 572
+505	CPU0	system	off	[+]   Sleeping now, for another 1800 ticks -- children thread forked at 416
+505	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 800
+606	CPU0	system	off	[+]   Sleeping now, for another 2700 ticks -- children thread forked at 572
+606	CPU0	system	off	[+]   Sleeping now, for another 1700 ticks -- children thread forked at 416
+606	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 700
+707	CPU0	system	off	[+]   Sleeping now, for another 2600 ticks -- children thread forked at 572
+707	CPU0	system	off	[+]   Sleeping now, for another 1600 ticks -- children thread forked at 416
+707	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 600
+808	CPU0	system	off	[+]   Sleeping now, for another 2500 ticks -- children thread forked at 572
+808	CPU0	system	off	[+]   Sleeping now, for another 1500 ticks -- children thread forked at 416
+808	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 500
+909	CPU0	system	off	[+]   Sleeping now, for another 2400 ticks -- children thread forked at 572
+909	CPU0	system	off	[+]   Sleeping now, for another 1400 ticks -- children thread forked at 416
+909	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 400
+1010	CPU0	system	off	[+]   Sleeping now, for another 2300 ticks -- children thread forked at 572
+1010	CPU0	system	off	[+]   Sleeping now, for another 1300 ticks -- children thread forked at 416
+1010	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 300
+1111	CPU0	system	off	[+]   Sleeping now, for another 2200 ticks -- children thread forked at 572
+1111	CPU0	system	off	[+]   Sleeping now, for another 1200 ticks -- children thread forked at 416
+1111	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 200
+1212	CPU0	system	off	[+]   Sleeping now, for another 2100 ticks -- children thread forked at 572
+1212	CPU0	system	off	[+]   Sleeping now, for another 1100 ticks -- children thread forked at 416
+1212	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+1313	CPU0	system	off	[+]   Sleeping now, for another 2000 ticks -- children thread forked at 572
+1313	CPU0	system	off	[+]   Sleeping now, for another 1000 ticks -- children thread forked at 416
+1313	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+1313	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/sleep)
+1313	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  1000
+1414	CPU0	system	off	[+]   Sleeping now, for another 1900 ticks -- children thread forked at 572
+1414	CPU0	system	off	[+]   Sleeping now, for another 900 ticks -- children thread forked at 416
+1414	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1000
+1515	CPU0	system	off	[+]   Sleeping now, for another 1800 ticks -- children thread forked at 572
+1515	CPU0	system	off	[+]   Sleeping now, for another 800 ticks -- children thread forked at 416
+1515	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 900
+1616	CPU0	system	off	[+]   Sleeping now, for another 1700 ticks -- children thread forked at 572
+1616	CPU0	system	off	[+]   Sleeping now, for another 700 ticks -- children thread forked at 416
+1616	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 800
+1717	CPU0	system	off	[+]   Sleeping now, for another 1600 ticks -- children thread forked at 572
+1717	CPU0	system	off	[+]   Sleeping now, for another 600 ticks -- children thread forked at 416
+1717	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 700
+1818	CPU0	system	off	[+]   Sleeping now, for another 1500 ticks -- children thread forked at 572
+1818	CPU0	system	off	[+]   Sleeping now, for another 500 ticks -- children thread forked at 416
+1818	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 600
+1919	CPU0	system	off	[+]   Sleeping now, for another 1400 ticks -- children thread forked at 572
+1919	CPU0	system	off	[+]   Sleeping now, for another 400 ticks -- children thread forked at 416
+1919	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 500
+2020	CPU0	system	off	[+]   Sleeping now, for another 1300 ticks -- children thread forked at 572
+2020	CPU0	system	off	[+]   Sleeping now, for another 300 ticks -- children thread forked at 416
+2020	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 400
+2121	CPU0	system	off	[+]   Sleeping now, for another 1200 ticks -- children thread forked at 572
+2121	CPU0	system	off	[+]   Sleeping now, for another 200 ticks -- children thread forked at 416
+2121	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 300
+2222	CPU0	system	off	[+]   Sleeping now, for another 1100 ticks -- children thread forked at 572
+2222	CPU0	system	off	[+]   Sleeping now, for another 100 ticks -- children thread forked at 416
+2222	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 200
+2323	CPU0	system	off	[+]   Sleeping now, for another 1000 ticks -- children thread forked at 572
+2323	CPU0	system	off	[+]   Waking up! -- children thread forked at 416
+2323	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+2424	CPU0	system	off	[+]   Sleeping now, for another 900 ticks -- children thread forked at 572
+2424	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+2424	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/sleep)
+2424	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  1000
+2424	CPU0	system	off	[+] we have returned from yieldCPU
+2525	CPU0	system	off	[+]   Sleeping now, for another 800 ticks -- children thread forked at 572
+2525	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+2626	CPU0	system	off	[+]   Sleeping now, for another 700 ticks -- children thread forked at 572
+2626	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+2727	CPU0	system	off	[+]   Sleeping now, for another 600 ticks -- children thread forked at 572
+2727	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+2828	CPU0	system	off	[+]   Sleeping now, for another 500 ticks -- children thread forked at 572
+2828	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+2929	CPU0	system	off	[+]   Sleeping now, for another 400 ticks -- children thread forked at 572
+2929	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+3030	CPU0	system	off	[+]   Sleeping now, for another 300 ticks -- children thread forked at 572
+3030	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+3131	CPU0	system	off	[+]   Sleeping now, for another 200 ticks -- children thread forked at 572
+3131	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+3232	CPU0	system	off	[+]   Sleeping now, for another 100 ticks -- children thread forked at 572
+3232	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+3333	CPU0	system	off	[+]   Waking up! -- children thread forked at 572
+3333	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+3434	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+3535	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+3535	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+3535	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+3636	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1000
+3737	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 900
+3838	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 800
+3939	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 700
+4040	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 600
+4141	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 500
+4242	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 400
+4343	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 300
+4444	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 200
+4545	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+4646	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+4646	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/sleep)
+4646	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  1000
+4646	CPU0	system	off	[+] we have returned from yieldCPU
+4747	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+4848	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+4949	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+5050	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+5151	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+5252	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+5353	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+5454	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+5555	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+5656	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+5757	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+5757	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+5757	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+5858	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+5959	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+6060	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+6161	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+6262	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+6363	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+6464	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+6565	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+6666	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+6767	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+6868	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+6868	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+6868	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+6969	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1000
+7070	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 900
+7171	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 800
+7272	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 700
+7373	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 600
+7474	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 500
+7575	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 400
+7676	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 300
+7777	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 200
+7878	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+7979	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+7979	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: ProgTest0(test/sleep)
+7979	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  1000
+8080	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+8181	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+8282	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+8383	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+8484	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+8585	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+8686	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+8787	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+8888	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+8989	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+9090	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+9090	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+9090	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+9191	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+9292	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+9393	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+9494	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+9595	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+9696	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+9797	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+9898	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+9999	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+10100	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+10201	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+10201	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+10201	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+10302	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1000
+10403	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 900
+10504	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 800
+10605	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 700
+10706	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 600
+10766	CPU0	system	on	[+] User program exits with status=1: ProgTest0(test/sleep)
+10770	CPU0	system	off	[+] Current burst accumulated: 500 in status: 4 from thread: ProgTest0(test/sleep)
+10807	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+10908	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+11009	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+11110	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+11211	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+11312	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+11413	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+11514	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+11615	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+11716	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+11817	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+11817	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+11817	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+11918	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+12019	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+12120	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+12221	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+12322	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+12423	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+12524	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+12625	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+12726	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+12827	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+12928	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+12928	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+12928	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+13029	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+13130	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+13231	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+13332	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+13433	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+13534	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+13635	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+13736	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+13837	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+13938	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+14039	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+14039	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+14039	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+14140	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+14241	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+14342	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+14443	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+14544	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+14645	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+14746	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+14847	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+14948	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+15049	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+15150	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+15150	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+15150	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+15251	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+15352	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+15453	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+15554	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+15655	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+15756	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+15857	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+15958	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+16059	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+16160	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+16261	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+16261	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+16261	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+16362	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+16463	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+16564	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+16665	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+16766	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+16867	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+16968	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+17069	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+17170	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+17271	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+17372	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+17372	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 416
+17372	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1000
+17473	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+17574	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+17675	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+17776	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+17877	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+17978	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+18079	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+18180	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+18281	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+18382	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+18483	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+18483	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+18483	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+18584	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+18685	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+18786	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+18887	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+18988	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+19089	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+19166	CPU0	system	on	[+] User program exits with status=2: children thread forked at 416
+19170	CPU0	system	off	[+] Current burst accumulated: 600 in status: 4 from thread: children thread forked at 416
+19190	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+19291	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+19392	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+19493	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+19594	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+19695	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+19796	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+19897	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+19998	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+20099	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+20200	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+20200	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+20200	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+20301	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+20402	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+20503	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+20604	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+20705	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+20806	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+20907	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+21008	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+21109	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+21210	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+21311	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+21311	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+21311	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+21412	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+21513	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+21614	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+21715	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+21816	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+21917	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+22018	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+22119	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+22220	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+22321	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+22422	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+22422	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+22422	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+22523	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+22624	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+22725	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+22826	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+22927	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+23028	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+23129	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+23230	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+23331	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+23432	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+23533	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+23533	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+23533	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+23634	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+23735	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+23836	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+23937	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+24038	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+24139	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+24240	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+24341	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+24442	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+24543	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+24644	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+24644	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+24644	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+24745	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+24846	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+24947	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+25048	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+25149	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+25250	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+25351	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+25452	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+25553	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+25654	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+25755	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+25755	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+25755	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+25856	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+25957	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+26058	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+26159	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+26260	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+26361	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+26462	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+26563	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+26664	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+26765	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+26866	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+26866	CPU0	system	off	[+] Current burst accumulated: 1000 in status: 1 from thread: children thread forked at 572
+26866	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1000
+26967	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+27068	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+27169	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+27270	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+27371	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+27406	CPU0	system	on	[+] User program exits with status=3: children thread forked at 572
+27408	CPU0	system	on	[+] Last thread is here
+27411	CPU0	system	off	[+] Current burst accumulated: 500 in status: 4 from thread: children thread forked at 572
+
+
+/***************************************************************
+/*Demo: -x test/sleep -ps
+/***************************************************************
+0				[+] Entering main
+0				[+] Queue: 0quantum: 100
+0				[+] Queue: 1quantum: 200
+0				[+] Queue: 2quantum: 400
+0				[+] Queue: 3quantum: 800
+0				[+] Queue: 4quantum: 1600
+0				[+] Queue: 5quantum: 3200
+0				[+] Queue: 6quantum: 6400
+0				[+] Queue: 7quantum: 12800
+0				[+] Queue: 8quantum: 25600
+0				[+] Queue: 9quantum: 51200
+1	CPU0	system	on	[+] Entering ThreadTest
+1	CPU0	system	on	[+] starting ProgTest: ProgTest0(test/sleep)
+2	CPU0	system	off	[+] Current burst accumulated: 0 in status: 4 from thread: FirstThread
+18	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:572
+18	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+20	CPU0	system	on	[+] Start Fork
+28	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:416
+28	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+30	CPU0	system	on	[+] Start Fork
+101	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+202	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+202	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: ProgTest0(test/sleep)
+202	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep) : 80.0
+202	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  100
+212	CPU0	system	on	[+] Printing ticks passed to sleep sys call: 3000
+212	CPU0	system	off	[+] Current burst accumulated: 0 in status: 3 from thread: children thread forked at 572
+222	CPU0	system	on	[+] Printing ticks passed to sleep sys call: 2000
+222	CPU0	system	off	[+] Current burst accumulated: 0 in status: 3 from thread: children thread forked at 416
+303	CPU0	system	off	[+]   Sleeping now, for another 3000 ticks -- children thread forked at 572
+303	CPU0	system	off	[+]   Sleeping now, for another 2000 ticks -- children thread forked at 416
+303	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+404	CPU0	system	off	[+]   Sleeping now, for another 2900 ticks -- children thread forked at 572
+404	CPU0	system	off	[+]   Sleeping now, for another 1900 ticks -- children thread forked at 416
+404	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+404	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: ProgTest0(test/sleep)
+404	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep) : 128.0
+404	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  200
+505	CPU0	system	off	[+]   Sleeping now, for another 2800 ticks -- children thread forked at 572
+505	CPU0	system	off	[+]   Sleeping now, for another 1800 ticks -- children thread forked at 416
+505	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 200
+606	CPU0	system	off	[+]   Sleeping now, for another 2700 ticks -- children thread forked at 572
+606	CPU0	system	off	[+]   Sleeping now, for another 1700 ticks -- children thread forked at 416
+606	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+707	CPU0	system	off	[+]   Sleeping now, for another 2600 ticks -- children thread forked at 572
+707	CPU0	system	off	[+]   Sleeping now, for another 1600 ticks -- children thread forked at 416
+707	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+707	CPU0	system	off	[+] Current burst accumulated: 200 in status: 1 from thread: ProgTest0(test/sleep)
+707	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep) : 236.8
+707	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  400
+808	CPU0	system	off	[+]   Sleeping now, for another 2500 ticks -- children thread forked at 572
+808	CPU0	system	off	[+]   Sleeping now, for another 1500 ticks -- children thread forked at 416
+808	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 400
+909	CPU0	system	off	[+]   Sleeping now, for another 2400 ticks -- children thread forked at 572
+909	CPU0	system	off	[+]   Sleeping now, for another 1400 ticks -- children thread forked at 416
+909	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 300
+1010	CPU0	system	off	[+]   Sleeping now, for another 2300 ticks -- children thread forked at 572
+1010	CPU0	system	off	[+]   Sleeping now, for another 1300 ticks -- children thread forked at 416
+1010	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 200
+1111	CPU0	system	off	[+]   Sleeping now, for another 2200 ticks -- children thread forked at 572
+1111	CPU0	system	off	[+]   Sleeping now, for another 1200 ticks -- children thread forked at 416
+1111	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+1212	CPU0	system	off	[+]   Sleeping now, for another 2100 ticks -- children thread forked at 572
+1212	CPU0	system	off	[+]   Sleeping now, for another 1100 ticks -- children thread forked at 416
+1212	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+1212	CPU0	system	off	[+] Current burst accumulated: 400 in status: 1 from thread: ProgTest0(test/sleep)
+1212	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep) : 462.08000000000004
+1212	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  800
+1313	CPU0	system	off	[+]   Sleeping now, for another 2000 ticks -- children thread forked at 572
+1313	CPU0	system	off	[+]   Sleeping now, for another 1000 ticks -- children thread forked at 416
+1313	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 800
+1414	CPU0	system	off	[+]   Sleeping now, for another 1900 ticks -- children thread forked at 572
+1414	CPU0	system	off	[+]   Sleeping now, for another 900 ticks -- children thread forked at 416
+1414	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 700
+1515	CPU0	system	off	[+]   Sleeping now, for another 1800 ticks -- children thread forked at 572
+1515	CPU0	system	off	[+]   Sleeping now, for another 800 ticks -- children thread forked at 416
+1515	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 600
+1616	CPU0	system	off	[+]   Sleeping now, for another 1700 ticks -- children thread forked at 572
+1616	CPU0	system	off	[+]   Sleeping now, for another 700 ticks -- children thread forked at 416
+1616	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 500
+1717	CPU0	system	off	[+]   Sleeping now, for another 1600 ticks -- children thread forked at 572
+1717	CPU0	system	off	[+]   Sleeping now, for another 600 ticks -- children thread forked at 416
+1717	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 400
+1818	CPU0	system	off	[+]   Sleeping now, for another 1500 ticks -- children thread forked at 572
+1818	CPU0	system	off	[+]   Sleeping now, for another 500 ticks -- children thread forked at 416
+1818	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 300
+1919	CPU0	system	off	[+]   Sleeping now, for another 1400 ticks -- children thread forked at 572
+1919	CPU0	system	off	[+]   Sleeping now, for another 400 ticks -- children thread forked at 416
+1919	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 200
+2020	CPU0	system	off	[+]   Sleeping now, for another 1300 ticks -- children thread forked at 572
+2020	CPU0	system	off	[+]   Sleeping now, for another 300 ticks -- children thread forked at 416
+2020	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+2121	CPU0	system	off	[+]   Sleeping now, for another 1200 ticks -- children thread forked at 572
+2121	CPU0	system	off	[+]   Sleeping now, for another 200 ticks -- children thread forked at 416
+2121	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+2121	CPU0	system	off	[+] Current burst accumulated: 800 in status: 1 from thread: ProgTest0(test/sleep)
+2121	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep) : 917.248
+2121	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  1600
+2222	CPU0	system	off	[+]   Sleeping now, for another 1100 ticks -- children thread forked at 572
+2222	CPU0	system	off	[+]   Sleeping now, for another 100 ticks -- children thread forked at 416
+2222	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1600
+2323	CPU0	system	off	[+]   Sleeping now, for another 1000 ticks -- children thread forked at 572
+2323	CPU0	system	off	[+]   Waking up! -- children thread forked at 416
+2323	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1500
+2424	CPU0	system	off	[+]   Sleeping now, for another 900 ticks -- children thread forked at 572
+2424	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1400
+2525	CPU0	system	off	[+]   Sleeping now, for another 800 ticks -- children thread forked at 572
+2525	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1300
+2626	CPU0	system	off	[+]   Sleeping now, for another 700 ticks -- children thread forked at 572
+2626	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1200
+2727	CPU0	system	off	[+]   Sleeping now, for another 600 ticks -- children thread forked at 572
+2727	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1100
+2828	CPU0	system	off	[+]   Sleeping now, for another 500 ticks -- children thread forked at 572
+2828	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 1000
+2929	CPU0	system	off	[+]   Sleeping now, for another 400 ticks -- children thread forked at 572
+2929	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 900
+3030	CPU0	system	off	[+]   Sleeping now, for another 300 ticks -- children thread forked at 572
+3030	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 800
+3131	CPU0	system	off	[+]   Sleeping now, for another 200 ticks -- children thread forked at 572
+3131	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 700
+3232	CPU0	system	off	[+]   Sleeping now, for another 100 ticks -- children thread forked at 572
+3232	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 600
+3333	CPU0	system	off	[+]   Waking up! -- children thread forked at 572
+3333	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 500
+3434	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 400
+3535	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 300
+3636	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 200
+3737	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 100
+3838	CPU0	system	on	[+] Reset quantum on thread ProgTest0(test/sleep)
+3838	CPU0	system	off	[+] Current burst accumulated: 1600 in status: 1 from thread: ProgTest0(test/sleep)
+3838	CPU0	system	off	[+] Next estimate(prediction) calculated for ProgTest0(test/sleep) : 1830.3488
+3838	CPU0	system	off	[+] Now thread: ProgTest0(test/sleep), has been placed in queue with quantum:  3200
+3838	CPU0	system	off	[+] we have returned from yieldCPU
+3939	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+4040	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+4040	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 416
+4040	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 80.0
+4040	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  100
+4040	CPU0	system	off	[+] we have returned from yieldCPU
+4141	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+4242	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+4242	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 572
+4242	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 572 : 80.0
+4242	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  100
+4343	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+4444	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+4444	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 416
+4444	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 128.0
+4444	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  200
+4545	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+4646	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+4646	CPU0	system	off	[+] Current burst accumulated: 100 in status: 1 from thread: children thread forked at 572
+4646	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 572 : 128.0
+4646	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  200
+4747	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+4848	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+4949	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+4949	CPU0	system	off	[+] Current burst accumulated: 200 in status: 1 from thread: children thread forked at 416
+4949	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 236.8
+4949	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  400
+5050	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+5151	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+5252	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+5252	CPU0	system	off	[+] Current burst accumulated: 200 in status: 1 from thread: children thread forked at 572
+5252	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 572 : 236.8
+5252	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  400
+5353	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+5454	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+5555	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+5656	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+5757	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+5757	CPU0	system	off	[+] Current burst accumulated: 400 in status: 1 from thread: children thread forked at 416
+5757	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 462.08000000000004
+5757	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  800
+5858	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+5959	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+6060	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+6161	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+6262	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+6262	CPU0	system	off	[+] Current burst accumulated: 400 in status: 1 from thread: children thread forked at 572
+6262	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 572 : 462.08000000000004
+6262	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  800
+6363	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+6464	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+6565	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+6666	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+6767	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+6868	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+6969	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+7070	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+7171	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+7171	CPU0	system	off	[+] Current burst accumulated: 800 in status: 1 from thread: children thread forked at 416
+7171	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 917.248
+7171	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  1600
+7272	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+7373	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+7474	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+7575	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+7676	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+7777	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+7878	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+7979	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+8080	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+8080	CPU0	system	off	[+] Current burst accumulated: 800 in status: 1 from thread: children thread forked at 572
+8080	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 572 : 917.248
+8080	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  1600
+8181	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1600
+8282	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1500
+8383	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1400
+8484	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1300
+8585	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1200
+8686	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1100
+8787	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+8888	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+8989	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+9090	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+9191	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+9292	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+9393	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+9494	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+9595	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+9696	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+9797	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+9797	CPU0	system	off	[+] Current burst accumulated: 1600 in status: 1 from thread: children thread forked at 416
+9797	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 1830.3488
+9797	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  3200
+9898	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1600
+9999	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1500
+10100	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1400
+10201	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1300
+10302	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1200
+10403	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1100
+10504	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+10605	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+10706	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+10807	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+10908	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+11009	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+11110	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+11211	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+11312	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+11413	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+11514	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+11514	CPU0	system	off	[+] Current burst accumulated: 1600 in status: 1 from thread: children thread forked at 572
+11514	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 572 : 1830.3488
+11514	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  3200
+11615	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 3200
+11716	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 3100
+11817	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 3000
+11918	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2900
+12019	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2800
+12120	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2700
+12221	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2600
+12322	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2500
+12423	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2400
+12524	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2300
+12625	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2200
+12726	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2100
+12827	CPU0	system	on	[+] Thread ProgTest0(test/sleep) has remaining clock ticks 2000
+12888	CPU0	system	on	[+] User program exits with status=1: ProgTest0(test/sleep)
+12892	CPU0	system	off	[+] Current burst accumulated: 1300 in status: 4 from thread: ProgTest0(test/sleep)
+12928	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3200
+13029	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3100
+13130	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 3000
+13231	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2900
+13332	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2800
+13433	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2700
+13534	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2600
+13635	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2500
+13736	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2400
+13837	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2300
+13938	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2200
+14039	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2100
+14140	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 2000
+14241	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1900
+14342	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1800
+14443	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1700
+14544	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1600
+14645	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1500
+14746	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1400
+14847	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1300
+14948	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1200
+15049	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1100
+15150	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 1000
+15251	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 900
+15352	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 800
+15453	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 700
+15554	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 600
+15655	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 500
+15756	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 400
+15857	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 300
+15958	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 200
+16059	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 100
+16160	CPU0	system	on	[+] Reset quantum on thread children thread forked at 416
+16160	CPU0	system	off	[+] Current burst accumulated: 3200 in status: 1 from thread: children thread forked at 416
+16160	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 416 : 3658.20928
+16160	CPU0	system	off	[+] Now thread: children thread forked at 416, has been placed in queue with quantum:  6400
+16261	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3200
+16362	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3100
+16463	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3000
+16564	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2900
+16665	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2800
+16766	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2700
+16867	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2600
+16968	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2500
+17069	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2400
+17170	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2300
+17271	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2200
+17372	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2100
+17473	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2000
+17574	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1900
+17675	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1800
+17776	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1700
+17877	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1600
+17978	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1500
+18079	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1400
+18180	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1300
+18281	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1200
+18382	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1100
+18483	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+18584	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+18685	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+18786	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+18887	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+18988	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+19089	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+19190	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+19291	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+19392	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+19493	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+19493	CPU0	system	off	[+] Current burst accumulated: 3200 in status: 1 from thread: children thread forked at 572
+19493	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 572 : 3658.20928
+19493	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  6400
+19594	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6400
+19695	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6300
+19796	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6200
+19897	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6100
+19998	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 6000
+20099	CPU0	system	on	[+] Thread children thread forked at 416 has remaining clock ticks 5900
+20102	CPU0	system	on	[+] User program exits with status=2: children thread forked at 416
+20106	CPU0	system	off	[+] Current burst accumulated: 600 in status: 4 from thread: children thread forked at 416
+20200	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 6400
+20301	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 6300
+20402	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 6200
+20503	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 6100
+20604	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 6000
+20705	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5900
+20806	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5800
+20907	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5700
+21008	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5600
+21109	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5500
+21210	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5400
+21311	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5300
+21412	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5200
+21513	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5100
+21614	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 5000
+21715	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4900
+21816	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4800
+21917	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4700
+22018	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4600
+22119	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4500
+22220	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4400
+22321	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4300
+22422	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4200
+22523	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4100
+22624	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 4000
+22725	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3900
+22826	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3800
+22927	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3700
+23028	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3600
+23129	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3500
+23230	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3400
+23331	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3300
+23432	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3200
+23533	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3100
+23634	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 3000
+23735	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2900
+23836	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2800
+23937	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2700
+24038	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2600
+24139	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2500
+24240	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2400
+24341	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2300
+24442	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2200
+24543	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2100
+24644	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 2000
+24745	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1900
+24846	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1800
+24947	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1700
+25048	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1600
+25149	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1500
+25250	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1400
+25351	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1300
+25452	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1200
+25553	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1100
+25654	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 1000
+25755	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 900
+25856	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 800
+25957	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 700
+26058	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 600
+26159	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 500
+26260	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 400
+26361	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 300
+26462	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 200
+26563	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 100
+26664	CPU0	system	on	[+] Reset quantum on thread children thread forked at 572
+26664	CPU0	system	off	[+] Current burst accumulated: 6400 in status: 1 from thread: children thread forked at 572
+26664	CPU0	system	off	[+] Next estimate(prediction) calculated for children thread forked at 572 : 7314.925568000001
+26664	CPU0	system	off	[+] Now thread: children thread forked at 572, has been placed in queue with quantum:  12800
+26765	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12800
+26866	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12700
+26967	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12600
+27068	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12500
+27169	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12400
+27270	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12300
+27371	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12200
+27472	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12100
+27573	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 12000
+27674	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 11900
+27775	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 11800
+27876	CPU0	system	on	[+] Thread children thread forked at 572 has remaining clock ticks 11700
+27906	CPU0	system	on	[+] User program exits with status=3: children thread forked at 572
+27908	CPU0	system	on	[+] Last thread is here
+27911	CPU0	system	off	[+] Current burst accumulated: 1200 in status: 4 from thread: children thread forked at 572

@@ -1,0 +1,111 @@
+CSE306 HW5 DEMO
+Mukai Nong 108916315
+Zhi Cao 108816413
+12/03/2015
+
+0				[+] Entering main
+0				[+] Queue: 0quantum: 100
+0				[+] Queue: 1quantum: 200
+0				[+] Queue: 2quantum: 400
+0				[+] Queue: 3quantum: 800
+0				[+] Queue: 4quantum: 1600
+0				[+] Queue: 5quantum: 3200
+0				[+] Queue: 6quantum: 6400
+0				[+] Queue: 7quantum: 12800
+0				[+] Queue: 8quantum: 25600
+0				[+] Queue: 9quantum: 51200
+1	CPU0	system	on	[+] Start using the real file system
+179503	CPU0	system	on	[+] Entering ThreadTest
+179503	CPU0	system	on	[+] file test
+179504	CPU0	system	on	[+] starting ProgTest: ProgTest0(test/Mmap)
+225503	CPU0	system	on	[+] current size is 10
+249503	CPU0	system	on	[+] name of the file is cp3.txt
+3297503	CPU0	system	on	[+] current size is 10
+3326003	CPU0	system	on	[+] name of the file is cp1.txt
+5729503	CPU0	system	on	[+] current size is 10
+5763003	CPU0	system	on	[+] name of the file is test/Mmap
+8929503	CPU0	system	on	[+] current size is 10
+8952003	CPU0	system	on	[+] name of the file is cp2.txt
+25730019	CPU0	system	on	[+] HELLOOOOOOOOOOOOOOOOOOOOOOOOOOO:680
+25730019	CPU0	system	on	[+] Current SpaceId of calling thread: 0
+25730021	CPU0	system	on	[+] Start Fork
+25730021	CPU0	system	on	[+] before allocate space for fork function, there are 15 pages
+25731039	CPU0	system	on	[+] The name being read iscp1.txt
+25731039	CPU0	system	on	[+] start Mmap
+25731039	CPU0	system	on	[+] read the integer of the size pointer: 0
+25731042	CPU0	system	on	[+] set the page table to fork with size 15
+25731052	CPU0	system	on	[+] The name being read iscp2.txt
+25731052	CPU0	system	on	[+] start Mmap
+25731052	CPU0	system	on	[+] read the integer of the size pointer: 0
+25790003	CPU0	system	on	[+] size of the file is 661
+25790003	CPU0	system	on	[+] need 6 pages
+25790003	CPU0	system	on	[+] New value in size pointer is 768
+25790003	CPU0	system	on	[+] The Return address of the Mmap is 1920
+25790018	CPU0	system	on	[+] Page fault handler 
+25790018	CPU0	system	on	[+] allocate the physicall page is 104
+25802503	CPU0	system	on	[+] allocate the physical page successfully! at PA: 13439
+25804680	CPU0	system	on	[+] Page fault handler 
+25804680	CPU0	system	on	[+] allocate the physicall page is 103
+25819003	CPU0	system	on	[+] allocate the physical page successfully! at PA: 13311
+25821180	CPU0	system	on	[+] Page fault handler 
+25821180	CPU0	system	on	[+] allocate the physicall page is 102
+25835503	CPU0	system	on	[+] allocate the physical page successfully! at PA: 13183
+25837680	CPU0	system	on	[+] Page fault handler 
+25837680	CPU0	system	on	[+] allocate the physicall page is 101
+25852003	CPU0	system	on	[+] allocate the physical page successfully! at PA: 13055
+25854180	CPU0	system	on	[+] Page fault handler 
+25854180	CPU0	system	on	[+] allocate the physicall page is 100
+25868503	CPU0	system	on	[+] allocate the physical page successfully! at PA: 12927
+25870680	CPU0	system	on	[+] Page fault handler 
+25870680	CPU0	system	on	[+] allocate the physicall page is 99
+25885003	CPU0	system	on	[+] allocate the physical page successfully! at PA: 12799
+25969503	CPU0	system	on	[+] Add additional space
+25969503	CPU0	system	on	[+] before add space 661
+25969503	CPU0	system	on	[+] increase to 768
+25969503	CPU0	system	on	[+] add space successfully
+26013003	CPU0	system	on	[+] Munmap VA is 1920
+26013003	CPU0	system	on	[+] Munmap result is 1
+26013012	CPU0	system	on	[+] The name being read iscp3.txt
+26013012	CPU0	system	on	[+] start Mmap
+26013012	CPU0	system	on	[+] read the integer of the size pointer: 768
+26057503	CPU0	system	on	[+] size of the file is 855
+26057503	CPU0	system	on	[+] need 7 pages
+26057503	CPU0	system	on	[+] New value in size pointer is 1664
+26057503	CPU0	system	on	[+] The Return address of the Mmap is 2688
+26057511	CPU0	system	on	[+] Page fault handler 
+26057511	CPU0	system	on	[+] allocate the physicall page is 104
+26069503	CPU0	system	on	[+] allocate the physical page successfully! at PA: 13439
+26069514	CPU0	system	on	[+] Page fault handler 
+26069514	CPU0	system	on	[+] allocate the physicall page is 103
+26086003	CPU0	system	on	[+] allocate the physical page successfully! at PA: 13311
+26086016	CPU0	system	on	[+] Munmap VA is 116
+26086016	CPU0	system	on	[+] Munmap result is 0
+26086025	CPU0	system	on	[+] Munmap VA is 1921
+26086025	CPU0	system	on	[+] Munmap result is 0
+26086031	CPU0	system	on	[+] User program exits with status=1: ProgTest0(test/Mmap)
+26152003	CPU0	system	on	[+] size of the file is 846
+26152003	CPU0	system	on	[+] need 7 pages
+26152003	CPU0	system	on	[+] New value in size pointer is 896
+26152003	CPU0	system	on	[+] The Return address of the Mmap is 3584
+26152009	CPU0	system	on	[+] Page fault handler 
+26152009	CPU0	system	on	[+] allocate the physicall page is 120
+26164003	CPU0	system	on	[+] allocate the physical page successfully! at PA: 15487
+26164014	CPU0	system	on	[+] Page fault handler 
+26164014	CPU0	system	on	[+] allocate the physicall page is 119
+26180503	CPU0	system	on	[+] allocate the physical page successfully! at PA: 15359
+26180509	CPU0	system	on	[+] Page fault handler 
+26180509	CPU0	system	on	[+] allocate the physicall page is 118
+26197003	CPU0	system	on	[+] allocate the physical page successfully! at PA: 15231
+26197008	CPU0	system	on	[+] User program exits with status=1: children thread forked at 680
+26277003	CPU0	system	on	[+] Last thread is here
+26277006	CPU0	idle	on	[+] No pending interrupts and all CPUs are idle
+Simulation terminating!
+
+Total ticks: 26277006
+   CPU 0: user 14205, system 5040, interrupt 1673, idle 26256088
+Interrupts: 1673
+   CPU 0: 1673
+Console I/O: reads 0, writes 0
+Disk I/O: reads 1279, writes 394
+Page faults: 11
+   CPU 0: 11
